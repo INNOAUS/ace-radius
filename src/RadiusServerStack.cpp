@@ -173,6 +173,12 @@ int RadiusServerStack::receiveRequest()
 }
 
 
+int RadiusServerStack::shutdown_socket_for_receive()
+{
+    return shutdown(m_socket, SHUT_RD);
+}
+
+
 // ---------------------------
 // Get RADIUS request
 // ---------------------------

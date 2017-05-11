@@ -97,6 +97,13 @@ public:
     int receiveRequest();
 
 
+    /// Useful to stop thread, called "RadiusServerStack::receiveRequest"
+    /**
+     * @return 0 upon successful completion; otherwise, -1 shall be returned and errno set to indicate the error.
+     */
+    int shutdown_socket_for_receive();
+
+
     /// Get RADIUS request
     /**
      * Get last RADIUS request received from the network. 
